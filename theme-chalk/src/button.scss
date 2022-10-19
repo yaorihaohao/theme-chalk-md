@@ -5,6 +5,7 @@
 @import "mixins/utils";
 
 @include b(button) {
+  min-width: 100px;
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -27,16 +28,18 @@
 
   @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
 
-  &:hover,
-  &:focus {
+  
+  &:hover {
     color: $--color-primary;
-    border-color: $--color-primary-light-7;
-    background-color: $--color-primary-light-9;
+    border-color: #AED5FF;/*$--color-primary-light-2;*/
+    background-color: #EDF6FF;/*$--color-primary-light-2;*/
   }
+  
 
   &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: $--color-primary;/*mix($--color-black, $--color-primary, $--button-active-shade-percent);*/
+    border-color: $--color-primary;/*mix($--color-black, $--color-primary, $--button-active-shade-percent);*/
+    background-color: #EDF6FF;/*$--color-primary-light-2;*/
     outline: none;
   }
 
@@ -50,6 +53,8 @@
     }
   }
 
+  /* 默认空白状态/朴素状态时*/
+  /*
   @include when(plain) {
     &:hover,
     &:focus {
@@ -65,7 +70,9 @@
       outline: none;
     }
   }
+  */
 
+  /* 当按钮点击不释放*/
   @include when(active) {
     color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
@@ -119,6 +126,7 @@
   }
   @include when(circle) {
     border-radius: 50%;
+    min-width: 0;
     padding: $--button-padding-vertical;
   }
   @include m(primary) {
@@ -156,7 +164,7 @@
   }
   @include m(text) {
     border-color: transparent;
-    color: $--color-primary;
+    color: $--color-text-primary;
     background: transparent;
     padding-left: 0;
     padding-right: 0;

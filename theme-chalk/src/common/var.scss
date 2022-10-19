@@ -1,3 +1,4 @@
+@use "sass:math";
 /* Element Chalk Variables */
 
 // Special comment for theme configurator
@@ -16,7 +17,7 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #409EFF !default;
+$--color-primary: #017AFF !default;
 /// color|1|Background Color|4
 $--color-white: #FFFFFF !default;
 /// color|1|Background Color|4
@@ -30,14 +31,15 @@ $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /
 $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+$--color-primary-light-active:mix($--color-white, $--color-primary, 15%) !default;
 /// color|1|Functional Color|1
-$--color-success: #67C23A !default;
+$--color-success: #38B953 !default;
 /// color|1|Functional Color|1
-$--color-warning: #E6A23C !default;
+$--color-warning: #FC9914 !default;
 /// color|1|Functional Color|1
-$--color-danger: #F56C6C !default;
+$--color-danger: #F85065 !default;
 /// color|1|Functional Color|1
-$--color-info: #909399 !default;
+$--color-info: #8693A5 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -55,7 +57,8 @@ $--color-text-regular: #606266 !default;
 /// color|1|Font Color|2
 $--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2
-$--color-text-placeholder: #C0C4CC !default;
+$--color-text-placeholder: 
+#C3CAD3 !default;
 /// color|1|Border Color|3
 $--border-color-base: #DCDFE6 !default;
 /// color|1|Border Color|3
@@ -64,6 +67,7 @@ $--border-color-light: #E4E7ED !default;
 $--border-color-lighter: #EBEEF5 !default;
 /// color|1|Border Color|3
 $--border-color-extra-light: #F2F6FC !default;
+$--border-color-btn-disabled: #D8DDE2 !default;
 
 // Background
 /// color|1|Background Color|4
@@ -126,6 +130,7 @@ $--font-line-height-primary: 24px !default;
 /// fontLineHeight|1|Line Height|2
 $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbb !default;
+$--font-color-btn-disabled-base: #C3CAD3 !default;
 /* Size
 -------------------------- */
 $--size-base: 14px !default;
@@ -426,6 +431,8 @@ $--input-font-size: $--font-size-base !default;
 /// color||Color|0
 $--input-font-color: $--color-text-regular !default;
 /// height||Other|4
+$--input-width: 140px !default;
+/// height||Other|4
 $--input-height: 40px !default;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
@@ -484,7 +491,7 @@ $--cascader-tag-background: #f0f2f5;
 
 /* Group
 -------------------------- */
-$--group-option-flex: 0 0 (1/5) * 100% !default;
+$--group-option-flex: 0 0 math.div(1, 5) * 100% !default;
 $--group-option-offset-bottom: 12px !default;
 $--group-option-fill-hover: rgba($--color-black, 0.06) !default;
 $--group-title-color: $--color-black !default;
@@ -513,9 +520,9 @@ $--button-font-weight: $--font-weight-primary !default;
 /// borderRadius||Border|2
 $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-padding-vertical: 12px !default;
+$--button-padding-vertical: 8px !default;
 /// padding||Spacing|3
-$--button-padding-horizontal: 20px !default;
+$--button-padding-horizontal: 22px !default;
 
 /// fontSize||Font|1
 $--button-medium-font-size: $--font-size-base !default;
@@ -553,7 +560,7 @@ $--button-disabled-font-color: $--color-text-placeholder !default;
 /// color||Color|0
 $--button-disabled-background-color: $--color-white !default;
 /// color||Color|0
-$--button-disabled-border-color: $--border-color-lighter !default;
+$--button-disabled-border-color: $--border-color-btn-disabled !default;
 
 /// color||Color|0
 $--button-primary-border-color: $--color-primary !default;
@@ -587,7 +594,7 @@ $--button-info-font-color: $--color-white !default;
 $--button-info-background-color: $--color-info !default;
 
 $--button-hover-tint-percent: 20% !default;
-$--button-active-shade-percent: 10% !default;
+$--button-active-shade-percent: 15% !default;
 
 
 /* cascader
@@ -615,13 +622,17 @@ $--switch-button-size: 16px !default;
 $--dialog-background-color: $--color-white !default;
 $--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
 /// fontSize||Font|1
-$--dialog-title-font-size: $--font-size-large !default;
+$--dialog-title-font-size: $--font-size-base !default;
 /// fontSize||Font|1
 $--dialog-content-font-size: 14px !default;
 /// fontLineHeight||LineHeight|2
 $--dialog-font-line-height: $--font-line-height-primary !default;
 /// padding||Spacing|3
 $--dialog-padding-primary: 20px !default;
+$--dialog-padding-header: 12px 16px; // md
+$--dialog-padding-header-top-bottom: 12px;// md
+$--dialog-padding-header-left-right: 16px;
+$--dialog-header-size-color: #081A2B;
 
 /* Table
 -------------------------- */

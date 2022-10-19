@@ -66,9 +66,11 @@
     }
   }
 
+  /*
   &.is-plain {
     @include button-plain($background-color);
   }
+  */
 }
 
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius) {
