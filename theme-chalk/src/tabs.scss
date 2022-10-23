@@ -11,11 +11,13 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
+    height: 4px;
     background-color: $--color-primary;
     z-index: 1;
     transition: transform .3s cubic-bezier(.645,.045,.355,1);
     list-style: none;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
   }
   @include e(new-tab) {
     float: right;
@@ -56,7 +58,7 @@
     }
 
     @include when(scrollable) {
-      padding: 0 8px;
+      padding: 0 20px;
       box-sizing: border-box;
     }
   }
@@ -93,7 +95,7 @@
     }
   }
   @include e(item) {
-    padding: 0 8px;
+    padding: 0 20px;
     height: 40px;
     box-sizing: border-box;
     line-height: 40px;
@@ -251,27 +253,27 @@
     }
 
     > .el-tabs__header .is-scrollable .el-tabs__item:first-child {
-      margin-left: 0;
+      // margin-left: 0;
     }
   }
   @include m((top, bottom)) {
     .el-tabs__item.is-top:nth-child(2),
     .el-tabs__item.is-bottom:nth-child(2) {
-      padding-left: 0;
+      // padding-left: 0;
     }
     .el-tabs__item.is-top:last-child,
     .el-tabs__item.is-bottom:last-child {
-      padding-right: 0;
+      // padding-right: 0;
     }
 
     &.el-tabs--border-card, &.el-tabs--card,
     .el-tabs--left, .el-tabs--right {
       > .el-tabs__header {
         .el-tabs__item:nth-child(2) {
-          padding-left: 8px;
+          padding-left: 20px;
         }
         .el-tabs__item:last-child {
-          padding-right: 8px;
+          padding-right: 20px;
         }
       }
     }

@@ -370,7 +370,7 @@ $--messagebox-danger-color: $--color-danger !default;
 /* Message
 -------------------------- */
 $--message-shadow: $--box-shadow-base !default;
-$--message-min-width: 380px !default;
+$--message-min-width: 320px !default;
 $--message-background-color: #edf2fc !default;
 $--message-padding: 15px 15px 15px 20px !default;
 /// color||Color|0
@@ -522,7 +522,8 @@ $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
 $--button-padding-vertical: 8px !default;
 /// padding||Spacing|3
-$--button-padding-horizontal: 22px !default;
+$--button-padding-horizontal: 18px !default;
+$--button-min-width: 100px;
 
 /// fontSize||Font|1
 $--button-medium-font-size: $--font-size-base !default;
@@ -532,12 +533,13 @@ $--button-medium-border-radius: $--border-radius-base !default;
 $--button-medium-padding-vertical: 10px !default;
 /// padding||Spacing|3
 $--button-medium-padding-horizontal: 20px !default;
+$--button-medium-min-width: 100px;
 
 /// fontSize||Font|1
 $--button-small-font-size: 12px !default;
 $--button-small-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
-$--button-small-padding-vertical: 9px !default;
+$--button-small-padding-vertical: 7px !default;
 /// padding||Spacing|3
 $--button-small-padding-horizontal: 15px !default;
 /// fontSize||Font|1
@@ -547,6 +549,7 @@ $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 $--button-mini-padding-vertical: 7px !default;
 /// padding||Spacing|3
 $--button-mini-padding-horizontal: 15px !default;
+$--button-mini-min-width: 80px !default;
 
 /// color||Color|0
 $--button-default-font-color: $--color-text-regular !default;
@@ -629,10 +632,11 @@ $--dialog-content-font-size: 14px !default;
 $--dialog-font-line-height: $--font-line-height-primary !default;
 /// padding||Spacing|3
 $--dialog-padding-primary: 20px !default;
-$--dialog-padding-header: 12px 16px; // md
-$--dialog-padding-header-top-bottom: 12px;// md
-$--dialog-padding-header-left-right: 16px;
-$--dialog-header-size-color: #081A2B;
+$--dialog-padding-header: 12px 16px !default; // md
+$--dialog-padding-header-top-bottom: 12px !default;// md
+$--dialog-padding-header-left-right: 16px !default;
+$--dialog-header-size-color: #081A2B !default;
+$--dialog-header-size: 14px;
 
 /* Table
 -------------------------- */
@@ -882,7 +886,7 @@ $--transfer-panel-width: 200px !default;
 /// height||Other|4
 $--transfer-panel-header-height: 40px !default;
 /// color||Color|0
-$--transfer-panel-header-background-color: $--background-color-base !default;
+$--transfer-panel-header-background-color: $--color-white; //$--background-color-base !default;
 /// height||Other|4
 $--transfer-panel-footer-height: 40px !default;
 /// height||Other|4

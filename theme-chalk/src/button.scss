@@ -5,7 +5,6 @@
 @import "mixins/utils";
 
 @include b(button) {
-  min-width: 100px;
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -21,13 +20,13 @@
   margin: 0;
   transition: .1s;
   font-weight: $--button-font-weight;
+  min-width: $--button-min-width;
   @include utils-user-select(none);
   & + & {
     margin-left: 10px;
   }
 
   @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
-
   
   &:hover {
     color: $--color-primary;
@@ -149,18 +148,21 @@
     @include when(circle) {
       padding: $--button-medium-padding-vertical;
     }
+    min-width: $--button-min-width;
   }
   @include m(small) {
     @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
     @include when(circle) {
       padding: $--button-small-padding-vertical;
     }
+    min-width: $--button-mini-min-width;
   }
   @include m(mini) {
     @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
     @include when(circle) {
       padding: $--button-mini-padding-vertical;
     }
+    min-width: $--button-mini-min-width;
   }
   @include m(text) {
     border-color: transparent;
