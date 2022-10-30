@@ -2,90 +2,115 @@
 @import "common/var";
 
 @mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
-  background-color: mix($--tag-primary-color, $--color-white, $backgroundColorWeight);
+  //mdzy
+  background-color: $--tag-primary-color;//mix($--tag-primary-color, $--color-white, $backgroundColorWeight);
   border-color: mix($--tag-primary-color, $--color-white, $borderColorWeight);
-  color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+  color: $--color-white;
+  // color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
 
   @include when(hit) {
     border-color: $--tag-primary-color;
   }
 
   .el-tag__close {
-    color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+    // color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
     &:hover {
       color: $--color-white;
-      background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
+      // background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
     }
   }
 
   &.el-tag--info {
-    background-color: mix($--tag-info-color, $--color-white, $backgroundColorWeight);
+    background-color: $--tag-info-color;//mix($--tag-info-color, $--color-white, $backgroundColorWeight);
     border-color: mix($--tag-info-color, $--color-white, $borderColorWeight);
-    color: mix($--tag-info-color, $--color-white, $fontColorWeight);
+    // color: mix($--tag-info-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
       border-color: $--tag-info-color;
     }
 
     .el-tag__close {
-      color: mix($--tag-info-color, $--color-white, $fontColorWeight);
+      // color: mix($--tag-info-color, $--color-white, $fontColorWeight);
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-info-color, $--color-white, $hoverColorWeight);
+        // background-color: mix($--tag-info-color, $--color-white, $hoverColorWeight);
       }
     }
   }
 
   &.el-tag--success {
-    background-color: mix($--tag-success-color, $--color-white, $backgroundColorWeight);
+    // mdzy
+    // background-color: mix($--tag-success-color, $--color-white, $backgroundColorWeight);
+    background-color: $--color-success;
     border-color: mix($--tag-success-color, $--color-white, $borderColorWeight);
-    color: mix($--tag-success-color, $--color-white, $fontColorWeight);
+    // color: mix($--tag-success-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
       border-color: $--tag-success-color;
     }
 
     .el-tag__close {
-      color: mix($--tag-success-color, $--color-white, $fontColorWeight);
+      // color: mix($--tag-success-color, $--color-white, $fontColorWeight);
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-success-color, $--color-white, $hoverColorWeight);
+        // background-color: mix($--tag-success-color, $--color-white, $hoverColorWeight);
       }
     }
   }
 
   &.el-tag--warning {
-    background-color: mix($--tag-warning-color, $--color-white, $backgroundColorWeight);
+    // mdzy
+    background-color: $--color-warning;
+    // background-color: mix($--tag-warning-color, $--color-white, $backgroundColorWeight);
     border-color: mix($--tag-warning-color, $--color-white, $borderColorWeight);
-    color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
+    // color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
       border-color: $--tag-warning-color;
     }
 
     .el-tag__close {
-      color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
+      // color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-warning-color, $--color-white, $hoverColorWeight);
+        // background-color: mix($--tag-warning-color, $--color-white, $hoverColorWeight);
       }
     }
   }
 
   &.el-tag--danger {
-    background-color: mix($--tag-danger-color, $--color-white, $backgroundColorWeight);
+    background-color: $--tag-danger-color; //mix($--tag-danger-color, $--color-white, $backgroundColorWeight);
     border-color: mix($--tag-danger-color, $--color-white, $borderColorWeight);
-    color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
+    // color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
       border-color: $--tag-danger-color;
     }
 
     .el-tag__close {
-      color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
+      // color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-danger-color, $--color-white, $hoverColorWeight);
+        // background-color: mix($--tag-danger-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  // mdzy: default展示
+  &.el-tag--default {
+    background-color: $--color-white;
+    color: $--color-label;
+    border-color: #D8DDE2;
+    @include when(hit) {
+      border-color: $--tag-primary-color;
+    }
+    &:hover {
+      background-color: $--color-primary;
+      color: $--color-white;
+    }
+    .el-tag__close {
+      &:hover {
+        color: $--color-white;
       }
     }
   }
@@ -99,7 +124,7 @@
   padding: $--tag-padding;
   line-height: 20px;
   font-size: $--tag-font-size;
-  color: $--tag-primary-color;
+  color: $--color-white; //$--tag-primary-color; mdzy
   border-width: 1px;
   border-style: solid;
   border-radius: $--tag-border-radius;
@@ -116,7 +141,7 @@
     width: 16px;
     line-height: 16px;
     vertical-align: middle;
-    top: -1px;
+    top: 0px;
     right: -5px;
 
     &::before {

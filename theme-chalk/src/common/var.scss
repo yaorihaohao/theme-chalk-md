@@ -59,6 +59,8 @@ $--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2
 $--color-text-placeholder: 
 #C3CAD3 !default;
+
+$--color-label: #081A2B !default;
 /// color|1|Border Color|3
 $--border-color-base: #DCDFE6 !default;
 /// color|1|Border Color|3
@@ -727,9 +729,9 @@ $--tag-warning-color: $--color-warning !default;
 /// color||Color|0
 $--tag-danger-color: $--color-danger !default;
 /// fontSize||Font|1
-$--tag-font-size: 12px !default;
+$--tag-font-size: 14px !default;
 $--tag-border-radius: 4px !default;
-$--tag-padding: 0 10px !default;
+$--tag-padding: 0 11px !default;
 
 /* Tree
 -------------------------- */
